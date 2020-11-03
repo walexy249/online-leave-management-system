@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/ionicons.min.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <nav class="nav-admin">
+        <a class="nav_logo and_admin" href="#">
+          Demie Yoe
+        </a>
+        <form class="search-box">
+          <i class="ion-search"></i>
+          <input type="text" placeholder="Search Ads, Post and Artisan in Ilaro" />
+        </form>
+        <div class="profile-top">
+          <i class="ion-ios-contact-outline"></i>
+          <p>Admin</p>
+        </div>
+      </nav>
+    </div>
+    <div class="sidebar">
+      <a href="/admin" class="tab-group tab tab-active" data-tab-target="#dash" >
+        <i class="ion-ios-speedometer-outline"></i>
+        <p>Dashboard</p>
+      </a>
+      
+      <button class="tab-group tab" data-tab-target="#edit">
+        <i class="ion-ios-gear-outline"></i>
+        <p>Edit Profile</p>
+      </button>
+      
+      <a href="/admin/signup" class="tab-group tab" data-tab-target="#create-new">
+        <i class="ion-person-add"></i>
+        <p>Create new user</p>
+      </a>
+      
+      
+      <button class="tab-group">
+        <i class="ion-log-out"></i>
+        <p>Logout</p>
+      </button>
+    </div>
+    <div class="content">
+      <div class="dashboard con-active" id="dash">
+        
+        <div class="leave-details">
+          <button type="button" class="btn-back">
+            <i class="ion-chevron-left"></i>
+            <p>Back</p>
+          </button>
+          
+          <div class="info">
+            <div class="app-details">
+              <div class="details-head">
+                <i class="ion-ios-contact-outline img-icon"></i>
+                <div class="details-info">
+                  <h3 class="info-name"><%= user.fullname %> </h3>
+                  <p class="info-phone">N/CS/18/2830</p>
+                  <p class="info-email"><%= user.email %></p>
+                  <p class="info-type"><%= user.typeOfLeave %></p>
+                </div>
+              </div>
+              <div class="details-body">
+                <h4 class="body-head">
+                  Reason for leave
+                </h4>
+                <p class="body-para">
+                  <%= user.reason %>
+                </p>
+              </div>
+            </div>
+            <div class="ac-dec">
+              <button class="btn-accept" type="submit">Approve</button>
+              
+              <button class="btn-decline" type="submit">Reject</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/ionicons.min.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <nav class="nav-admin">
+        <a class="nav_logo and_admin" href="#">
+          Demie Yoe
+        </a>
+        <form class="search-box">
+          <i class="ion-search"></i>
+          <input type="text" placeholder="Search Ads, Post and Artisan in Ilaro" />
+        </form>
+        <div class="profile-top">
+          <i class="ion-ios-contact-outline"></i>
+          <p>Admin</p>
+        </div>
+      </nav>
+    </div>
+    <div class="sidebar">
+      <a href="/admin" class="tab-group tab" data-tab-target="#dash" >
+        <i class="ion-ios-speedometer-outline"></i>
+        <p>Dashboard</p>
+      </a>
+      
+      <a class="tab-group tab" data-tab-target="#edit">
+        <i class="ion-ios-gear-outline"></i>
+        <p>Edit Profile</p>
+      </a>
+      
+      <a href="/signup" class="tab-group tab tab-active" data-tab-target="#create-new">
+        <i class="ion-person-add"></i>
+        <p>Create new user</p>
+      </a>
+      
+      
+      <a class="tab-group">
+        <i class="ion-log-out"></i>
+        <p>Logout</p>
+      </a>
+    </div>
+    <div class="content">
+      <!-- <div class="dashboard con-active" id="dash">
+        
+        
+      </div> -->
+      
+      <div class="create-new-user" id="create-new" style="display: flex; justify-content: center; align-items: center;">
+        <form class="form" action="/admin/signup" method="POST" accept-charset="utf-8">
+          <h4 class="form-head">Register</h4>
+          <% if (errorMessage) { %> 
+            <div class="user-alert error">
+              <p><%= errorMessage %> </p>
+            </div>
+        <% } %> 
+          <div class="form-group">
+            <input name="staffId" type="text" placeholder="Staff ID"  value="<%= errorMessage ? oldData.staffId : "" %>" />
+          </div>
+          <div class="form-group">
+            <input name="fullname" type="text" placeholder="Fullname" value="<%= errorMessage ? oldData.fullname : "" %>" required  />
+          </div>
+          <div class="form-group">
+            <input name="email" type="email" placeholder="Email" value="<%= errorMessage ? oldData.email : "" %>"  required />
+          </div>
+          <div class="form-group">
+            <input name="password" type="password" placeholder="Password" value="<%= errorMessage ? oldData.password : "" %>" required />
+          </div>
+          <div class="form-group">
+            <input name="confirmPassword" type="password" placeholder="Confirm Password" value="<%= errorMessage ? oldData.confirmPassword : "" %>" required />
+          </div>
+          <div class="form-group">
+            <button class="form-btn" type="submit">Create new user</button>
+          </div>
+         
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+
+
+</html>

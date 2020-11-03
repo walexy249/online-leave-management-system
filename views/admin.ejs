@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/ionicons.min.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <nav class="nav-admin">
+        <a class="nav_logo and_admin" href="#">
+          Demie Yoe
+        </a>
+        <form class="search-box">
+          <i class="ion-search"></i>
+          <input type="text" placeholder="Search Ads, Post and Artisan in Ilaro" />
+        </form>
+        <div class="profile-top">
+          <i class="ion-ios-contact-outline"></i>
+          <p>Admin</p>
+        </div>
+      </nav>
+    </div>
+    <div class="sidebar">
+      <a href="#" class="tab-group tab tab-active" data-tab-target="#dash" >
+        <i class="ion-ios-speedometer-outline"></i>
+        <p>Dashboard</p>
+      </a>
+      
+      <a href="#" class="tab-group tab" data-tab-target="#edit">
+        <i class="ion-ios-gear-outline"></i>
+        <p>Edit Profile</p>
+      </a>
+      
+      <a href="/admin/signup" class="tab-group tab" data-tab-target="#create-new">
+        <i class="ion-person-add"></i>
+        <p>Create new user</p>
+      </a>
+      
+      
+      <a href="#" class="tab-group">
+        <i class="ion-log-out"></i>
+        <p>Logout</p>
+      </a>
+    </div>
+    <div class="content">
+      <div class="dashboard con-active" id="dash">
+        
+        <div class="dash-top">
+          <div class="all-leave">
+            <h3 class="leave-title">
+              All Leaves
+            </h3>
+            <p class="leave-num"><%= users.length %> </p>
+          </div>
+          <div class="app-leave">
+            <h3 class="leave-title">
+              Approved Leave
+            </h3>
+            <p class="leave-num"><%= approved.length %></p>
+          </div>
+          <div class="pend-leave">
+            <h3 class="leave-title">
+              Pending Leave
+            </h3>
+            <p class="leave-num"><%= pending.length %></p>
+          </div>
+          <div class="reject-leave">
+            <h3 class="leave-title">
+              Rejected Leave
+            </h3>
+            <p class="leave-num"><%= declined.length %></p>
+          </div>
+        </div>
+        <div class="dash-bottom">
+          <h4 class="dash-title">All Leaves</h4>
+            <table>
+              <tr>
+                <th>#</th>
+                <th>Employee name</th>
+                <th>Leave type</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+              <% if (users.length > 0 ) { %> 
+              <% for( i = 0; i < users.length; i++) { %> 
+                <tr>
+                  <td><%= i + 1 %> </td>
+                  <td><%= users[i].fullname %> </td>
+                  <td><%= users[i].typeOfLeave %> </td>
+                  <td class="app">
+                    <%= users[i].status %>
+                  </td>
+                  <td>
+                    <a class="btn-table" href="/admin/<%= users[i]._id %> " type="submit">
+                      View
+                    </a>
+                  </td>
+                </tr>
+            <% } %> 
+              <% } %> 
+              <!-- <tr>
+                <td>2</td>
+                <td>Ramon Rasheed</td>
+                <td>Sick Leave</td>
+                <td class="app">
+                  Approved
+                </td>
+                <td>
+                  <button class="btn-table" type="submit">
+                    View
+                  </button>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>3</td>
+                <td>Ramon Rasheed</td>
+                <td>Sick Leave</td>
+                <td class="pen">
+                  Pending
+                </td>
+                <td>
+                  <button class="btn-table" type="submit">
+                    View
+                  </button>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>4</td>
+                <td>Ramon Rasheed</td>
+                <td>Sick Leave</td>
+                <td class="app">
+                  Approved
+                </td>
+                <td>
+                  <button class="btn-table" type="submit">
+                    View
+                  </button>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>5</td>
+                <td>Ramon Rasheed</td>
+                <td>Sick Leave</td>
+                <td class="app">
+                  Approved
+                </td>
+                <td>
+                  <button class="btn-table" type="submit">
+                    View
+                  </button>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>6</td>
+                <td>Ramon Rasheed</td>
+                <td>Sick Leave</td>
+                <td class="pen">
+                  Pending
+                </td>
+                <td>
+                  <button class="btn-table" type="submit">
+                    View
+                  </button>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>7</td>
+                <td>Ramon Rasheed</td>
+                <td>Sick Leave</td>
+                <td class="rej">
+                  Rejected
+                </td>
+                <td>
+                  <button class="btn-table" type="submit">
+                    View
+                  </button>
+                </td>
+              </tr> -->
+            </table>
+        </div>
+       
+        
+      
+      
+    </div>
+  </div>
+  
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+
+
+</html>

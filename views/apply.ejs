@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demie Yoe</title>
+  <!-- HTML -->
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/ionicons.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- <div class="alert error">
+    <p>Invalid Staff ID or Password</p>
+  </div> -->
+  <!-- Header Section -->
+  <div class="not-home">
+    <nav class="nav">
+      <a class="nav_logo" href="#">
+        Demie Yoe
+      </a>
+      <div class="nav_menu">
+        <a class="nav_links" href="#">
+          About
+        </a>
+        <a class="nav_links" href="#">
+          Contact
+        </a>
+        <a class="nav_btn" href="#">
+          Sign Up
+        </a>
+        <a class="nav_btn" href="#">
+          Login
+        </a>
+      </div>
+    </nav>
+  </div>
+  <section class="form-section apply" style="margin: 150px 0;">
+    <form class="form" action="/apply" method="POST" accept-charset="utf-8">
+      <h4 class="form-head">Apply For Leave</h4>
+      <div class="form-group">
+        <input type="text" name="fullname" placeholder="Fullname" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <div class="select-con" style="position: relative;">
+          <div class="selected">
+            <p>Type of leave</p>
+            <i class="select-icon ion-chevron-down"></i>
+          </div>
+          <div class="option-container active">
+            <div class="option">
+              <input type="radio" name="typeOfLeave" id="computer" value="Bereavement leave" />
+              <label for="computer">Bereavement leave</label>
+            </div>
+            <div class="option">
+              <input type="radio" name="typeOfLeave" id="phones" value="Vacation leave" />
+              <label for="phones">Vacation leave</label>
+            </div>
+            <div class="option">
+              <input type="radio" name="typeOfLeave" id="electronics" value="Sick leave" />
+              <label for="electronics">Sick leave</label>
+            </div>
+            <div class="option">
+              <input type="radio" name="typeOfLeave" id="kids" value="Maternity leave" />
+              <label for="kids">Maternity leave</label>
+            </div>
+            <div class="option">
+              <input type="radio" name="typeOfLeave" id="fashion" value="Paternity leave" />
+              <label for="fashion">Paternity leave</label>
+            </div>
+            <div class="option">
+              <input type="radio" name="typeOfLeave" id="furnitures" value="Pregnancy leave" />
+              <label for="furnitures">Pregnancy leave</label>
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Reason for leave" name="reason" rows="3" cols="50" required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="date" name="date" placeholder="Leave Date" value="yyyy/mm/dd" pattern="yyyy-mm-dd" required/>
+      </div>
+      <div class="form-group">
+        <input name="duration" type="number" placeholder="Duration in Weeks" required/>
+      </div>
+      <div class="form-group">
+        <button class="form-btn" type="submit">Apply</button>
+    </form>
+  </section>
+  <footer class="footer">
+    &copy; The Federal Polytechnic Ilaro P.M.B 50
+    <script type="text/javascript" charset="utf-8">
+      const d = new Date()
+      const year = d.getFullYear()
+      document.write(year)
+    </script>
+  </footer>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/ionicons.min.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <nav class="nav-admin">
+        <a class="nav_logo and_admin" href="#">
+          Demie Yoe
+        </a>
+        <form class="search-box">
+          <i class="ion-search"></i>
+          <input type="text" placeholder="Search Ads, Post and Artisan in Ilaro" />
+        </form>
+        <div class="profile-top">
+          <i class="ion-ios-contact-outline"></i>
+          <p>Admin</p>
+        </div>
+      </nav>
+    </div>
+    <div class="sidebar">
+      <a class="tab-group tab" data-tab-target="#dash" >
+        <i class="ion-ios-speedometer-outline"></i>
+        <p>Dashboard</p>
+      </a>
+      
+      <a class="tab-group tab tab-active" data-tab-target="#edit">
+        <i class="ion-ios-gear-outline"></i>
+        <p>Edit Profile</p>
+      </a>
+      
+      <a class="tab-group tab" data-tab-target="#create-new">
+        <i class="ion-person-add"></i>
+        <p>Create new user</p>
+      </a>
+      
+      
+      <a class="tab-group">
+        <i class="ion-log-out"></i>
+        <p>Logout</p>
+      </a>
+    </div>
+    <div class="content">
+      <div class="dashboard" id="dash">
+        
+        
+      </div>
+      <div class="edit-profile con-active" id="edit">
+        <div class="edit-prof">
+          <h3 class="content-head">Edit Information</h3>
+          <div class="edit-photo">
+            <i class="ion-ios-contact-outline img-icon"></i>
+            <div class="edit-pic">
+              <input type="file" name="" id="pic" />
+              <label for="pic">Choose a photo</label>
+            </div>
+          </div>
+          <div class="account-info">
+            <h4 class="content-sub-head">Account Information</h4>
+            <div class="acc-box">
+              <div class="acc-input-box">
+                <div class="form-group input-box">
+                  <input type="text" placeholder="Fullname" value="John Doe" />
+                </div>
+                <button type="button" class="edit-name">
+                  <i class="ion-ios-checkmark-outline"></i>
+                </button>
+              </div>
+              <div class="acc-input-box">
+                <div class="form-group input-box">
+                  <input type="email" placeholder="Email" value="ramonrash2@gmail.com" />
+                </div>
+                <button type="button" class="edit-mail">
+                  <i class="ion-ios-checkmark-outline"></i>
+                </button>
+              </div>
+              <div class="acc-input-box">
+                <div class="form-group input-box">
+                  <input type="tel" placeholder="Phone Number" value="08024283327" />
+                </div>
+                <button type="button" class="edit-phone">
+                  <i class="ion-ios-checkmark-outline"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="account-info">
+            <h4 class="content-sub-head">Change Password</h4>
+            <div class="acc-box">
+              <div class="acc-input-box">
+                <div class="form-group input-box">
+                  <input type="password" placeholder="Current Password" />
+                </div>
+              </div>
+              <div class="acc-input-box">
+                <div class="form-group input-box">
+                  <input type="password" placeholder="New Password" />
+                </div>
+              </div>
+              <div class="acc-input-box">
+                <div class="form-group input-box">
+                  <input type="password" placeholder="Confirm Password" />
+                </div>
+              </div>
+              <button type="button" class="btn-change">Change Password</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+
+
+</html>
