@@ -63,7 +63,6 @@
                 <i class="ion-ios-contact-outline img-icon"></i>
                 <div class="details-info">
                   <h3 class="info-name"><%= user.fullname %> </h3>
-                  <p class="info-phone">N/CS/18/2830</p>
                   <p class="info-email"><%= user.email %></p>
                   <p class="info-type"><%= user.typeOfLeave %></p>
                 </div>
@@ -78,9 +77,18 @@
               </div>
             </div>
             <div class="ac-dec">
-              <button class="btn-accept" type="submit">Approve</button>
+
+              <form action="/admin/approve-appointment" method="POST">
+                <input type="hidden" name="id" value="<%= user.id %>" />
+                <button class="btn-accept" type="submit">Approve</button>
+              </form>
+
+              <form action="/admin/decline-appointment" method="POST">
+                <input type="hidden" name="id" value="<%= user.id %>" />
+                <button class="btn-decline" type="submit">Reject</button>
+              </form>
+
               
-              <button class="btn-decline" type="submit">Reject</button>
             </div>
           </div>
         </div>

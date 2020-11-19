@@ -34,4 +34,7 @@ router.post(
 
 router.route("/login").get(adminController.loginPage).post(adminController.login);
 router.get("/admin/:id",  adminController.getDetailsPage);
+router.route('/admin/decline-appointment').post(adminController.declineAppointment);
+router.route('/admin/approve-appointment').post(adminController.approveAppointment);
+
 module.exports = router;

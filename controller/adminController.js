@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Admin = require("./../model/adminModel");
 const User = require("./../model/userModel");
+const Email = require("./../utils/email");
 
 exports.getAdminPage = async (req, res) => {
   const users = await User.find();
@@ -149,4 +150,36 @@ exports.getDetailsPage = async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+exports.declineAppointment = async (req, res, next) => {
+  const user = await User.findById({ _id: req.body.id });
+  console.log(user);
+
+  // send the email to the client by using the Email
+  try {
+    await new Email(user, {}).declineAppointment();
+    user.status = 'declined';
+    await user.save();
+  } catch (err) {
+    console.log(err);
+  }
+  res.redirect(`/admin/${req.body.id}`);
+
+};
+
+exports.approveAppointment = async (req, res, next) => {
+  const user = await User.findById({ _id: req.body.id });
+  console.log(user);
+
+  // send the email to the client by using the Email
+  try {
+    await new Email(user, {}).approveAppointment();
+    user.status = 'approved';
+    await user.save();
+  } catch (err) {
+    console.log(err);
+  }
+
+  res.redirect(`/admin/${req.body.id}`);
 };
