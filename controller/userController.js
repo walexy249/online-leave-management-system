@@ -6,6 +6,7 @@ exports.getLeavePage = (req, res) => {
 
 
 exports.applyForLeave = async (req, res) => {
+    console.log(req.body);
     await User.create({
         fullname: req.body.fullname,
         email: req.body.email,
